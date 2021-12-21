@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "jsx": "react",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "strict": true,
+        "baseUrl": ".",
+        "skipLibCheck": true,
+        "paths": {}
+    },
+    "include": ["src"]
+}
