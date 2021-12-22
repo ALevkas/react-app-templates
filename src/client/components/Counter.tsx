@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 
-interface counterProps {
-}
 
-const Counter = (props: counterProps) => {
+const Counter = () => {
     const [counter, setCounter] = useState(0);
 
     const handleClick = () => {

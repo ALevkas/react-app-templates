@@ -12,7 +12,7 @@
         "skipLibCheck": true,
         "paths": {
             "@components/*": ["src/client/components/*"]
-        }
+        },
     },
     "include": ["src"]
 }
