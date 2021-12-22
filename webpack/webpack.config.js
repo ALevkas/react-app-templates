@@ -1,37 +1,12 @@
-const {resolve} = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const {merge} = require('webpack-merge')
+const commonConfig = require('./webpack.common.js')
 
-module.exports = {
-    entry: resolve(__dirname, '..', './src/client/index.tsx'),
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js',]
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(ts|js)x?$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader'
-                    }
-                ]
-            }, {
-                test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            }
-        ]
-    },
-    output: {
-        path: resolve(__dirname, '..', './build'),
-        filename: '[name][hash].js'
-    },
-    mode: 'development',
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: resolve(__dirname, '..', './src/index.html')
-        })
-    ]
+module.exports = (envVars) => {
+    const {env} = envVars
+
+    const envConfig = require(`./webpack.${env}.js`)
+
+    const config = merge(commonConfig, envConfig)
+
+    return config
 }
