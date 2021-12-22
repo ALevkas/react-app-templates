@@ -5,7 +5,10 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 module.exports = {
     entry: resolve(__dirname, '..', './src/client/index.tsx'),
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            '@components': resolve(__dirname, '..', './src/client/components')
+        }
     },
     module: {
         rules: [

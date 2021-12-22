@@ -10,7 +10,9 @@
         "strict": true,
         "baseUrl": ".",
         "skipLibCheck": true,
-        "paths": {}
+        "paths": {
+            "@components/*": ["src/client/components/*"]
+        }
     },
     "include": ["src"]
 }
