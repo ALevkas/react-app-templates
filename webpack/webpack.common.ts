@@ -1,8 +1,9 @@
-const {resolve} = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+import { Configuration } from 'webpack'
+import { resolve } from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
-module.exports = {
+const config: Configuration = {
     entry: resolve(__dirname, '..', './src/client/index.tsx'),
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
@@ -40,3 +41,5 @@ module.exports = {
         })
     ]
 }
+
+export default config

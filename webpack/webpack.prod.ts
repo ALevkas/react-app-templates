@@ -1,11 +1,13 @@
-const webpack = require('webpack')
+import {DefinePlugin, Configuration} from 'webpack'
 
-module.exports = {
+const config: Configuration = {
     mode: 'production',
     devtool: 'source-map',
     plugins: [
-        new webpack.DefinePlugin({
+        new DefinePlugin({
             'process.env.name': JSON.stringify('CodeEvolution')
         })
     ]
 }
+
+export default config
